@@ -1,0 +1,36 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './shared/theme'
+import { GlobalStyle } from './shared/Global'
+import HomePage from './pages/Home/HomePage'
+import ErrorPage from './pages/404/404.'
+import ProjectsPage from './pages/Projects/ProjectsPage'
+import { Container } from './components/styles/Container/Container.styled'
+import Header from './components/Header/Header'
+
+function App() {
+    return (
+        <ThemeProvider theme={theme}>
+            <>
+                <BrowserRouter>
+                    <Header />
+                    <GlobalStyle />
+
+                    <Container>
+                        <Routes>
+                            <Route path='/' element={<HomePage />} />
+                            <Route
+                                path='/projects'
+                                element={<ProjectsPage />}
+                            />
+                            <Route path='*' element={<ErrorPage />} />
+                        </Routes>
+                    </Container>
+                    <footer>this is my footer</footer>
+                </BrowserRouter>
+            </>
+        </ThemeProvider>
+    )
+}
+
+export default App
