@@ -1,7 +1,8 @@
 export const theme = {
     fonts: {
-        primary: 'Roboto, sans-serif',
-        secondary: '"Roboto Condensed", sans-serif',
+        primary: 'Rajdhani, sans-serif',
+        secondary: 'Teko, sans-serif',
+        terciary: 'Bangers, cursive',
     },
     colors: {
         green: '#A9ED33',

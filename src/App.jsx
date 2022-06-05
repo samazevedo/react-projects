@@ -3,10 +3,11 @@ import { ThemeProvider } from 'styled-components'
 import { theme } from './shared/theme'
 import { GlobalStyle } from './shared/Global'
 import HomePage from './pages/Home/HomePage'
-import ErrorPage from './pages/404/404.'
+import ErrorPage from './pages/404/404'
 import ProjectsPage from './pages/Projects/ProjectsPage'
 import { Container } from './components/styles/Container/Container.styled'
 import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
 function App() {
     return (
@@ -26,7 +27,7 @@ function App() {
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
-                    <footer>this is my footer</footer>
+                    <Footer />
                 </BrowserRouter>
             </>
         </ThemeProvider>

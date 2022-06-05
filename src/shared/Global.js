@@ -1,16 +1,24 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 body {
+    //font-family: 'Bangers', cursive;
+    //font-family: 'Rajdhani', sans-serif;
+    //font-family: 'Teko', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     background-color: ${({ theme }) => theme.colors.primaryBG};
@@ -24,6 +32,5 @@ ul {
 a{
     text-decoration: none;
 }
-
 
 `
