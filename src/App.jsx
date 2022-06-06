@@ -8,6 +8,8 @@ import ProjectsPage from './pages/Projects/ProjectsPage'
 import { Container } from './components/styles/Container/Container.styled'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
+import Gallery from './projects/Gallery/Gallery'
+import Bookstore from './projects/Bookstore/Bookstore'
 
 function App() {
     return (
@@ -16,14 +18,21 @@ function App() {
                 <BrowserRouter>
                     <Header />
                     <GlobalStyle />
-
                     <Container>
                         <Routes>
                             <Route path='/' element={<HomePage />} />
+                            <Route path='/projects' element={<ProjectsPage />}>
+                                <Route path=':id' element={<ProjectsPage />} />
+                            </Route>
                             <Route
-                                path='/projects'
-                                element={<ProjectsPage />}
+                                path='/projects/gallery'
+                                element={<Gallery />}
                             />
+                            <Route
+                                path='/projects/bookstore'
+                                element={<Bookstore />}
+                            />
+
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>

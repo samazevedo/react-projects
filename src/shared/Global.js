@@ -21,7 +21,7 @@ body {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    background-color: ${({ theme }) => theme.colors.primaryBG};
+    background-color: ${({ theme }) => theme.colors.white};
 }
 img {
     max-width: 100%;

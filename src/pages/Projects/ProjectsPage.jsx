@@ -1,23 +1,26 @@
-import { useNavigate, useParams, Routes, Route } from 'react-router-dom'
-
+import { useNavigate, Link } from 'react-router-dom'
+import { ProjectsData } from './projectsData'
+import { ProjectsStyled } from './Projects.styled'
 function ProjectsPage() {
-    let navigate = useNavigate()
-    let { id } = useParams()
+    const navigate = useNavigate()
+
     return (
-        <>
-            <h1>Projects Page </h1>
-            <Routes>
-                <Route path='/projects/:id' element={<ProjectsPage />} />
-            </Routes>
-            <p>Project ID: {id}</p>
-            <button
-                onClick={() => {
-                    navigate('/')
-                }}
-            >
-                Return to Home Page
-            </button>
-        </>
+        <ProjectsStyled>
+            <h1>Projects List Page </h1>
+            {ProjectsData.map((project) => {
+                return (
+                    <div
+                        onClick={() => {
+                            navigate(`/projects/${project.id}`)
+                        }}
+                    >
+                        <h2>{project.name}</h2>
+                        <p>{project.description}</p>
+                        <Link to={project.url}>Check it out</Link>
+                    </div>
+                )
+            })}
+        </ProjectsStyled>
     )
 }
 

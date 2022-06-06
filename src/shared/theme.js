@@ -12,7 +12,7 @@ export const theme = {
         black: '#000000',
         gray: '#696969',
         darkBlue: '#2C3E50',
-        primaryBG: '#8B8D8BFB',
+        primaryBG: '#D0D6D0FB',
     },
     breakpoints: {
         mobile: '576px',
