@@ -5,7 +5,7 @@ export const HeaderStyled = styled.header`
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1.5fr 0.5fr;
-    background-color: ${({ theme }) => theme.colors.green};
+    background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
     & a {
         color: ${({ theme }) => theme.colors.black};

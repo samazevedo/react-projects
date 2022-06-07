@@ -10,6 +10,7 @@ import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Gallery from './projects/Gallery/Gallery'
 import Bookstore from './projects/Bookstore/Bookstore'
+import Reminder from './projects/Reminder/Reminder'
 
 function App() {
     return (
@@ -32,7 +33,10 @@ function App() {
                                 path='/projects/bookstore'
                                 element={<Bookstore />}
                             />
-
+                            <Route
+                                path='/projects/reminder'
+                                element={<Reminder />}
+                            />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>

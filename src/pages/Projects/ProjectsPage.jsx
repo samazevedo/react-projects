@@ -1,13 +1,14 @@
 import { useNavigate, Link } from 'react-router-dom'
-import { ProjectsData } from './projectsData'
+import { PROJECTSDATA } from '../../data/data'
 import { ProjectsStyled } from './Projects.styled'
+
 function ProjectsPage() {
     const navigate = useNavigate()
 
     return (
         <ProjectsStyled>
             <h1>Projects List Page </h1>
-            {ProjectsData.map((project) => {
+            {PROJECTSDATA.map((project) => {
                 return (
                     <div
                         onClick={() => {

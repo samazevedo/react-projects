@@ -1,10 +1,10 @@
-export const ProjectsData = [
+export const PROJECTSDATA = [
     {
-        id: 'gallery',
-        name: 'Image Gallery',
+        id: 'reminder',
+        name: 'Birthday Reminder',
         description:
-            'This is a React Image Gallery project. This Project makes use of React and Firebase to store images and display them on the screen.',
-        url: '/projects/gallery',
+            'Simple React project that displays UI form with a birthday reminder .',
+        url: 'projects/reminder',
     },
     {
         id: 'bookstore',
