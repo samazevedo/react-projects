@@ -34,7 +34,7 @@ export const TourComponentStyled = styled.article`
         padding: 0.5rem;
         font-size: ${({ theme }) => theme.fontSizes.xsmall};
         cursor: pointer;
-        &:hover {
+        & :hover {
             background-color: ${({ theme }) => theme.colors.red};
             color: ${({ theme }) => theme.colors.white};
 
@@ -42,6 +42,18 @@ export const TourComponentStyled = styled.article`
                 background-color: ${({ theme }) => theme.colors.red};
                 color: ${({ theme }) => theme.colors.white};
                 transform: scale(0.99);
+            }
+        }
+    }
+    & .readmore {
+        background-color: transparent;
+        color: ${({ theme }) => theme.colors.blue};
+        font-size: ${({ theme }) => theme.fontSizes.xxsmall};
+        border: none;
+        & button {
+            & :hover {
+                background-color: transparent;
+                color: ${({ theme }) => theme.colors.darkblue};
             }
         }
     }
