@@ -1,7 +1,7 @@
 import TourComponent from './TourComponent'
 import { ToursStyled } from './Tours.styled'
 
-const Tours = ({ tours }) => {
+const Tours = ({ tours, removeTour }) => {
     return (
         <ToursStyled>
             <div className='title'>
@@ -10,7 +10,13 @@ const Tours = ({ tours }) => {
             </div>
             <div>
                 {tours.map((tour) => {
-                    return <TourComponent key={tour.id} {...tour} />
+                    return (
+                        <TourComponent
+                            key={tour.id}
+                            {...tour}
+                            removeTour={removeTour}
+                        />
+                    )
                 })}
             </div>
         </ToursStyled>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TourComponentStyled } from './TourComponent.styled'
 
-function TourComponent({ id, image, info, price, name }) {
+function TourComponent({ id, image, info, price, name, removeTour }) {
     const [readMore, setReadMore] = useState(false)
 
     return (
@@ -21,7 +21,7 @@ function TourComponent({ id, image, info, price, name }) {
                 </button>
             </p>
 
-            <button>Delete</button>
+            <button onClick={() => removeTour(id)}>Delete</button>
         </TourComponentStyled>
     )
 }
