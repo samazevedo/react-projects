@@ -19,4 +19,10 @@ export const PROJECTSDATA = [
         description: 'A todo app',
         url: 'projects/todo-app',
     },
+    {
+        id: 'tour',
+        name: 'Tour',
+        description: 'A tour app',
+        url: 'projects/tour',
+    },
 ]

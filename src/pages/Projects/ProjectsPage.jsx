@@ -11,6 +11,8 @@ function ProjectsPage() {
             {PROJECTSDATA.map((project) => {
                 return (
                     <div
+                        key={project.id}
+                        className='project-item'
                         onClick={() => {
                             navigate(`/projects/${project.id}`)
                         }}

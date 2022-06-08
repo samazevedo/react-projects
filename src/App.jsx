@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 import Gallery from './projects/Gallery/Gallery'
 import Bookstore from './projects/Bookstore/Bookstore'
 import Reminder from './projects/Reminder/Reminder'
+import Tour from './projects/Tour/Tour'
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
                                 path='/projects/reminder'
                                 element={<Reminder />}
                             />
+                            <Route path='/projects/tour' element={<Tour />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
