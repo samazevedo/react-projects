@@ -7,22 +7,16 @@ export const PROJECTSDATA = [
         url: 'projects/reminder',
     },
     {
-        id: 'bookstore',
-        name: 'Mini Bookstore',
-        description: 'A Bookstore',
-        url: 'projects/bookstore',
-    },
-
-    {
-        id: 'todo-app',
-        name: 'Todo App',
-        description: 'A todo app',
-        url: 'projects/todo-app',
-    },
-    {
         id: 'tour',
         name: 'Tour',
         description: 'A tour app',
         url: 'projects/tour',
+    },
+    {
+        id: 'review',
+        name: 'Review',
+        description:
+            'A review app, where you can go through the reviews one by one or randonly',
+        url: 'projects/review',
     },
 ]

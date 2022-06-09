@@ -8,10 +8,9 @@ import ProjectsPage from './pages/Projects/ProjectsPage'
 import { Container } from './components/styles/Container/Container.styled'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
-import Gallery from './projects/Gallery/Gallery'
-import Bookstore from './projects/Bookstore/Bookstore'
 import Reminder from './projects/Reminder/Reminder'
 import Tour from './projects/Tour/Tour'
+import Review from './projects/Review/Review'
 
 function App() {
     return (
@@ -26,19 +25,12 @@ function App() {
                             <Route path='/projects' element={<ProjectsPage />}>
                                 <Route path=':id' element={<ProjectsPage />} />
                             </Route>
-                            <Route
-                                path='/projects/gallery'
-                                element={<Gallery />}
-                            />
-                            <Route
-                                path='/projects/bookstore'
-                                element={<Bookstore />}
-                            />
-                            <Route
-                                path='/projects/reminder'
-                                element={<Reminder />}
-                            />
+                            <Route path='/reminder' element={<Reminder />} />
                             <Route path='/projects/tour' element={<Tour />} />
+                            <Route
+                                path='/projects/review'
+                                element={<Review />}
+                            />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
