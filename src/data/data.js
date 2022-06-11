@@ -5,12 +5,14 @@ export const PROJECTSDATA = [
         description:
             'Simple React project that displays UI form with a birthday reminder .',
         url: 'reminder',
+        image: '/assets/images/projects/reminder.png',
     },
     {
         id: 'tour',
         name: 'Tour',
         description: 'A tour app',
         url: 'tour',
+        image: '/assets/images/projects/tour.png',
     },
     {
         id: 'review',
@@ -18,6 +20,7 @@ export const PROJECTSDATA = [
         description:
             'A review app, where you can go through the reviews one by one or randonly',
         url: 'review',
+        image: './assets/images/projects/review.png',
     },
     {
         id: 'accordion',

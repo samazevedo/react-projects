@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { PROJECTSDATA } from '../../data/data'
-import { ProjectsStyled } from './Projects.styled'
+import { ProjectsStyled, BgImage } from './Projects.styled'
 
 function ProjectsPage() {
     const navigate = useNavigate()
@@ -11,16 +11,20 @@ function ProjectsPage() {
 
             <ProjectsStyled>
                 {PROJECTSDATA.map((project) => {
+                    const { id, name, description, url, image } = project
+
                     return (
-                        <div
-                            key={project.id}
-                            className='project-item'
-                            onClick={() => {
-                                navigate(`/projects/${project.id}`)
-                            }}
-                        >
-                            <h2>{project.name}</h2>
-                            <p>{project.description}</p>
+                        <div key={id} className='project-item'>
+                            <BgImage image={image} />
+                            <h2>{name}</h2>
+                            <p>{description}</p>
+                            <button
+                                onClick={() => {
+                                    navigate(`/projects/${url}`)
+                                }}
+                            >
+                                View Project
+                            </button>
                         </div>
                     )
                 })}

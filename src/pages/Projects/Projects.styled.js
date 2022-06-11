@@ -29,7 +29,6 @@ export const ProjectsStyled = styled.section`
         padding: 0;
         margin: 0;
         color: ${({ theme }) => theme.colors.blue};
-        cursor: pointer;
     }
     & .project-item {
         display: grid;
@@ -37,9 +36,34 @@ export const ProjectsStyled = styled.section`
         justify-items: center;
         box-shadow: 0 0 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
         border-radius: 0.2rem;
-        background-color: ${({ theme }) => theme.colors.white};
         padding: 1rem;
-        cursor: pointer;
         height: 15rem;
+        &:hover {
+            transform: translate(-0.1rem, -0.1rem);
+            box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease-in-out;
+        }
+        & button {
+            font-size: ${({ theme }) => theme.fontSizes.xsmall};
+            padding: 0.3rem;
+            border: none;
+            background: ${({ theme }) => theme.colors.gray};
+            color: ${({ theme }) => theme.colors.white};
+            border-radius: 0.2rem;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            &:hover {
+                background: ${({ theme }) => theme.colors.orange};
+
+                transition: all 0.4s ease-in-out;
+            }
+        }
     }
+`
+export const BgImage = styled.div`
+    background-image: url(${({ image }) => image});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
 `
