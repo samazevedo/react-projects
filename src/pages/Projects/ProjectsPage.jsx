@@ -1,4 +1,4 @@
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { PROJECTSDATA } from '../../data/data'
 import { ProjectsStyled } from './Projects.styled'
 
@@ -6,24 +6,26 @@ function ProjectsPage() {
     const navigate = useNavigate()
 
     return (
-        <ProjectsStyled>
+        <>
             <h1>Projects List Page </h1>
-            {PROJECTSDATA.map((project) => {
-                return (
-                    <div
-                        key={project.id}
-                        className='project-item'
-                        onClick={() => {
-                            navigate(`/projects/${project.id}`)
-                        }}
-                    >
-                        <h2>{project.name}</h2>
-                        <p>{project.description}</p>
-                        <Link to={project.url}>Check it out</Link>
-                    </div>
-                )
-            })}
-        </ProjectsStyled>
+
+            <ProjectsStyled>
+                {PROJECTSDATA.map((project) => {
+                    return (
+                        <div
+                            key={project.id}
+                            className='project-item'
+                            onClick={() => {
+                                navigate(`/projects/${project.id}`)
+                            }}
+                        >
+                            <h2>{project.name}</h2>
+                            <p>{project.description}</p>
+                        </div>
+                    )
+                })}
+            </ProjectsStyled>
+        </>
     )
 }
 

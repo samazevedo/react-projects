@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 import Reminder from './projects/Reminder/Reminder'
 import Tour from './projects/Tour/Tour'
 import Review from './projects/Review/Review'
+import Accordion from './projects/Accordion/Accordion'
 
 function App() {
     return (
@@ -21,15 +22,23 @@ function App() {
                     <GlobalStyle />
                     <Container>
                         <Routes>
-                            <Route path='/' element={<HomePage />} />
-                            <Route path='/projects' element={<ProjectsPage />}>
+                            <Route index element={<HomePage />} />
+                            <Route path='home' element={<HomePage />} />
+                            <Route path='projects' element={<ProjectsPage />}>
                                 <Route path=':id' element={<ProjectsPage />} />
                             </Route>
-                            <Route path='/reminder' element={<Reminder />} />
-                            <Route path='/projects/tour' element={<Tour />} />
                             <Route
-                                path='/projects/review'
+                                path='projects/reminder'
+                                element={<Reminder />}
+                            />
+                            <Route path='projects/tour' element={<Tour />} />
+                            <Route
+                                path='projects/review'
                                 element={<Review />}
+                            />
+                            <Route
+                                path='projects/accordion'
+                                element={<Accordion />}
                             />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>

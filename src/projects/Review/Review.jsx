@@ -7,7 +7,6 @@ function Review() {
                 <h1>Review</h1>
                 <div className='underline'></div>
             </div>
-
             <ReviewComponent />
         </ReviewStyled>
     )
