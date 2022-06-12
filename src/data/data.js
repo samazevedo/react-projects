@@ -27,5 +27,6 @@ export const PROJECTSDATA = [
         name: 'Accordion',
         description: 'Accordion app, you can expand and collapse the items.',
         url: 'accordion',
+        image: './assets/images/projects/accordion.png',
     },
 ]

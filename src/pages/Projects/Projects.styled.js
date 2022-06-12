@@ -52,6 +52,7 @@ export const ProjectsStyled = styled.section`
             border-radius: 0.2rem;
             cursor: pointer;
             transition: all 0.4s ease-in-out;
+            margin-top: 0.7rem;
             &:hover {
                 background: ${({ theme }) => theme.colors.orange};
 
