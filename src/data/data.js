@@ -20,13 +20,20 @@ export const PROJECTSDATA = [
         description:
             'A review app, where you can go through the reviews one by one or randonly',
         url: 'review',
-        image: './assets/images/projects/review.png',
+        image: '/assets/images/projects/review.png',
     },
     {
         id: 'accordion',
         name: 'Accordion',
         description: 'Accordion app, you can expand and collapse the items.',
         url: 'accordion',
-        image: './assets/images/projects/accordion.png',
+        image: '/assets/images/projects/accordion.png',
+    },
+    {
+        id: 'menu',
+        name: 'Menu',
+        description: 'Menu app, with a dynamic menu and a search bar.',
+        url: 'menu',
+        image: '/assets/images/projects/menu.png',
     },
 ]

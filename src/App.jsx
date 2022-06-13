@@ -12,6 +12,7 @@ import Reminder from './projects/Reminder/Reminder'
 import Tour from './projects/Tour/Tour'
 import Review from './projects/Review/Review'
 import Accordion from './projects/Accordion/Accordion'
+import Menu from './projects/Menu/Menu'
 
 function App() {
     return (
@@ -40,6 +41,7 @@ function App() {
                                 path='projects/accordion'
                                 element={<Accordion />}
                             />
+                            <Route path='projects/menu' element={<Menu />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
