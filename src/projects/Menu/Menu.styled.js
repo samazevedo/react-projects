@@ -25,11 +25,11 @@ export const MenuStyled = styled.main`
 export const MenuItemStyled = styled.article`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: start;
+    justify-items: center;
     align-items: flex-start;
-    margin-bottom: 3rem;
+    margin: 0 2rem 3rem 2rem;
     width: 100%;
-
+    max-width: 40rem;
     & .img-container {
         width: 13rem;
         height: 10rem;

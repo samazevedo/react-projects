@@ -61,7 +61,7 @@ export const MENULIST = [
         title: 'Toasted English Muffins',
         category: 'Breakfast',
         price: '$2.99',
-        image: '/assets/images/english-muffins.jpg',
+        image: '/assets/images/english-muffin.jpg',
         description:
             'This is a toasted english muffins with a banana buttercream.',
     },
