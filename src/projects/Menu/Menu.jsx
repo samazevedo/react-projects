@@ -25,7 +25,7 @@ function Menu() {
                 <h1>Menu</h1>
                 <div className='underline'></div>
             </header>
-            <section>
+            <section className='categories-menu'>
                 <MenuBtns categories={category} filterItems={filterItems} />
             </section>
             <section className='menu-items'>

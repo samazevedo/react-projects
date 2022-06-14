@@ -1,11 +1,16 @@
+import { MenuButtons } from './Menu.styled'
+
 function MenuBtns({ categories, filterItems }) {
     return (
         <div>
             {categories.map((category, index) => {
                 return (
-                    <button key={index} onClick={() => filterItems(category)}>
+                    <MenuButtons
+                        onClick={() => filterItems(category)}
+                        key={index}
+                    >
                         {category}
-                    </button>
+                    </MenuButtons>
                 )
             })}
         </div>
