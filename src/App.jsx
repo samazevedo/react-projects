@@ -13,6 +13,7 @@ import Tour from './projects/Tour/Tour'
 import Review from './projects/Review/Review'
 import Accordion from './projects/Accordion/Accordion'
 import Menu from './projects/Menu/Menu'
+import Tab from './projects/Tab/Tab'
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                                 element={<Accordion />}
                             />
                             <Route path='projects/menu' element={<Menu />} />
+                            <Route path='projects/tab' element={<Tab />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>

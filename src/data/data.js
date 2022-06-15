@@ -36,4 +36,11 @@ export const PROJECTSDATA = [
         url: 'menu',
         image: '/assets/images/projects/menu.png',
     },
+    {
+        id: 'tab',
+        name: 'Tab',
+        description: 'Tab app, with a dynamic menu and a search bar.',
+        url: 'tab',
+        image: '/assets/images/projects/tab.png',
+    },
 ]
