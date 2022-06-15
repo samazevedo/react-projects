@@ -51,4 +51,12 @@ export const PROJECTSDATA = [
         url: 'slider',
         image: '/assets/images/projects/slider.png',
     },
+    {
+        id: 'lorem',
+        name: 'Lorem',
+        description:
+            'This is a simple generator of Lorem Ipsum text. You can choose how many words and paragraphs you want to generate.',
+        url: 'lorem',
+        image: '/assets/images/projects/lorem.png',
+    },
 ]

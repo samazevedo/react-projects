@@ -15,6 +15,7 @@ import Accordion from './projects/Accordion/Accordion'
 import Menu from './projects/Menu/Menu'
 import Tab from './projects/Tab/Tab'
 import Slider from './projects/Slider/Slider'
+import Lorem from './projects/Lorem/Lorem'
 
 function App() {
     return (
@@ -49,6 +50,7 @@ function App() {
                                 path='projects/slider'
                                 element={<Slider />}
                             />
+                            <Route path='projects/lorem' element={<Lorem />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
