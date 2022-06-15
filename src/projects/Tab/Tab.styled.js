@@ -31,6 +31,7 @@ export const TabStyled = styled.main`
         grid-template-columns: 0.8fr 1.2fr;
         margin-top: 2rem;
     }
+
     & .job-info {
         display: grid;
         grid-template-columns: 1fr;
@@ -98,6 +99,11 @@ export const TabStyled = styled.main`
             }
         }
     }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        & .info {
+            grid-template-columns: 1fr;
+        }
+    }
 `
 export const TabMenuStyled = styled.nav`
     display: grid;
@@ -131,6 +137,20 @@ export const TabMenuStyled = styled.nav`
                 color: ${({ theme }) => theme.colors.violet};
                 border-left: 0.2rem solid ${({ theme }) => theme.colors.violet};
             }
+        }
+    }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        & ul {
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(3, 1fr);
+            & button {
+              &:focus {
+                border-bottom: 0.2rem solid ${({ theme }) =>
+                    theme.colors.violet};
+                border-left: none;
+
+
+              }
         }
     }
 `
