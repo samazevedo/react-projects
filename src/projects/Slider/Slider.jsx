@@ -7,10 +7,11 @@ import {
 } from 'react-icons/fa'
 import { DATA } from './data'
 import { BgImage } from '../../components/BgImage/BgImage'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Slider() {
     const [currentSlide, setCurrentSlide] = useState(0)
+
     const nextSlide = () => {
         setCurrentSlide(currentSlide + 1)
         if (currentSlide + 1 === DATA.length) {
@@ -23,6 +24,13 @@ function Slider() {
             setCurrentSlide(DATA.length - 1)
         }
     }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            nextSlide()
+        }, 5000)
+        return () => clearInterval(interval)
+    })
+
     const { image, name, job, quote, id } = DATA[currentSlide]
 
     return (
