@@ -14,6 +14,7 @@ import Review from './projects/Review/Review'
 import Accordion from './projects/Accordion/Accordion'
 import Menu from './projects/Menu/Menu'
 import Tab from './projects/Tab/Tab'
+import Slider from './projects/Slider/Slider'
 
 function App() {
     return (
@@ -44,6 +45,10 @@ function App() {
                             />
                             <Route path='projects/menu' element={<Menu />} />
                             <Route path='projects/tab' element={<Tab />} />
+                            <Route
+                                path='projects/slider'
+                                element={<Slider />}
+                            />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>

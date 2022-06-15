@@ -144,13 +144,12 @@ export const TabMenuStyled = styled.nav`
             grid-template-rows: 1fr;
             grid-template-columns: repeat(3, 1fr);
             & button {
-              &:focus {
-                border-bottom: 0.2rem solid ${({ theme }) =>
-                    theme.colors.violet};
-                border-left: none;
-
-
-              }
+                &:focus {
+                    border-bottom: 0.2rem solid
+                        ${({ theme }) => theme.colors.violet};
+                    border-left: none;
+                }
+            }
         }
     }
 `

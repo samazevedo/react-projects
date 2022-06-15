@@ -43,4 +43,12 @@ export const PROJECTSDATA = [
         url: 'tab',
         image: '/assets/images/projects/tab.png',
     },
+    {
+        id: 'slider',
+        name: 'Slider',
+        description:
+            'Slider app. Displays a content info dynamically and automatically.',
+        url: 'slider',
+        image: '/assets/images/projects/slider.png',
+    },
 ]
