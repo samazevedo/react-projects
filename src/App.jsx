@@ -16,6 +16,7 @@ import Menu from './projects/Menu/Menu'
 import Tab from './projects/Tab/Tab'
 import Slider from './projects/Slider/Slider'
 import Lorem from './projects/Lorem/Lorem'
+import Color from './projects/Color/Color'
 
 function App() {
     return (
@@ -51,6 +52,7 @@ function App() {
                                 element={<Slider />}
                             />
                             <Route path='projects/lorem' element={<Lorem />} />
+                            <Route path='projects/color' element={<Color />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>

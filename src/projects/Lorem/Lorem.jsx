@@ -5,27 +5,22 @@ import { useState } from 'react'
 function Lorem() {
     const [count, setCount] = useState(0)
     const [words, setWords] = useState([])
-    const [paragraphs, setParagraphs] = useState(0)
-
     const handleSubmit = (e) => {
         e.preventDefault()
         let amount = parseInt(count)
-
         if (amount <= 0) {
             amount = 0
         }
         if (amount > LOREMDATA.length) {
             amount = 20
         }
-
         setWords(LOREMDATA.slice(0, amount))
     }
     return (
         <LoremStyled>
             <h1>Lorem Ipsum Generator</h1>
-
             <form onSubmit={handleSubmit}>
-                <label htmlFor='amount'>Amount of words:</label>
+                <label htmlFor='amount'>Paragraphs:</label>
                 <input
                     type='number'
                     name='amount'

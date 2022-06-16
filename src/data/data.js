@@ -59,4 +59,12 @@ export const PROJECTSDATA = [
         url: 'lorem',
         image: '/assets/images/projects/lorem.png',
     },
+    {
+        id: 'color',
+        name: 'Palette Color Generator',
+        description:
+            'Palette Color Generator is a simple and yet amazing app where you can create cool palette colors.',
+        url: 'color',
+        image: '/assets/images/projects/color-generator.png',
+    },
 ]
