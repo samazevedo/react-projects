@@ -65,6 +65,14 @@ export const PROJECTSDATA = [
         description:
             'Palette Color Generator is a simple and yet amazing app where you can create cool palette colors.',
         url: 'color',
-        image: '/assets/images/projects/color-generator.png',
+        image: '/assets/images/projects/color.png',
+    },
+    {
+        id: 'grocery',
+        name: 'Grocery List',
+        description:
+            'Grocery List is a simple app, where you can add and remove items to a list.',
+        url: 'grocery',
+        image: '/assets/images/projects/grocery.png',
     },
 ]
