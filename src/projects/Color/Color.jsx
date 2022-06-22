@@ -1,50 +1,50 @@
 import { useState } from 'react'
-import { ColorStyled } from './Color.styled'
-import {
-    hexToRgb,
-    rgbToHex,
-    rgbToShadeList,
-    randomRGBColor,
-    randomHexColor,
-} from '../../utils/Colors'
+import { ColorStyled, SingleColorStyled } from './Color.styled'
+import { randomHexColor } from '../../utils/Colors'
 import SingleColor from './SingleColor'
+import { useEffect } from 'react'
 
 function Color() {
     const [color, setColor] = useState('')
     const [error, setError] = useState(false)
-    const [list, setList] = useState([])
-    // const [random, setRandom] = useState([])
-    const randomList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const [randomColor, setRandomColor] = useState([])
 
-    const randomColorList = randomList.map((item) => randomHexColor())
     const handleRandomList = () => {
-        setList(randomColorList)
+        setRandomColor([])
+        setRandomColor(Array.from(Array(10).keys()).map(() => randomHexColor()))
     }
-    console.log(randomColorList)
+    useEffect(() => {
+        handleRandomList()
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(color)
-        // Validate color input
-        if (color.length <= 3 || color.length >= 8) {
-            setError(true)
-            setColor('type a valid hex color')
-        } else {
+
+        if (
+            (color.length === 7 || color.length === 4) &&
+            color.startsWith('#')
+        ) {
             setError(false)
-            const rgbColor = hexToRgb(color)
-            console.log(rgbColor)
+        } else if (
+            color.length[0] !== '#' &&
+            (color.length === 3 || color.length === 6)
+        ) {
+            setError(false)
+
+            console.log(color)
+        } else {
+            setError(true)
+            return
         }
     }
     const handleChange = (e) => {
         setColor(e.target.value)
-        if (e.target.value[0] !== '#') {
-            setColor.push(`${e.target.value[0]} ${e.target.value.push(1)}`)
-        }
+        console.log(color)
     }
 
     return (
         <ColorStyled>
-            <div>
+            <div className='input-color'>
                 <header>
                     <h1>Palette Color Generator</h1>
                 </header>
@@ -63,22 +63,20 @@ function Color() {
                         <button type='submit'>Submit</button>
                     </form>
                 </section>
-                <section>
+                <section className='output-color'>
                     <SingleColor color={color} />
                 </section>
             </div>
             <section className='random-palette'>
                 <h3>Random Palette</h3>
                 <ul>
-                    {randomColorList.map((color) => (
-                        <li key={color}>
-                            <SingleColor color={color} />
+                    {randomColor.map((item, index) => (
+                        <li key={index}>
+                            <SingleColor color={item} />
                         </li>
                     ))}
                 </ul>
-                <button onClick={() => handleRandomList()}>
-                    Generate a new Palette
-                </button>
+                <button onClick={() => handleRandomList()}>New Palette</button>
             </section>
         </ColorStyled>
     )

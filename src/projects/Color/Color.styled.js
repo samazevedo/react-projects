@@ -48,9 +48,22 @@ export const ColorStyled = styled.main`
             font-size: 0.8rem;
             cursor: pointer;
             transition: all 0.3s ease-in-out;
-
             &:active {
                 transform: scale(0.98);
+            }
+        }
+    }
+    & .input-color {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        width: 100%;
+        align-items: center;
+        justify-items: center;
+        & .output-color {
+            width: 100px;
+            height: 100px;
+            & article {
+                background-color: ${({ color }) => color};
             }
         }
     }
@@ -60,4 +73,5 @@ export const SingleColorStyled = styled.article`
     width: 100%;
     height: 100%;
     background-color: ${({ color }) => color};
+    animation: fadeIn 1s ease-in-out;
 `
