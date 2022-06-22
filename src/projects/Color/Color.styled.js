@@ -38,7 +38,6 @@ export const ColorStyled = styled.main`
                 }
             }
         }
-
         & button {
             border: none;
             border-radius: 3px;
@@ -49,21 +48,23 @@ export const ColorStyled = styled.main`
             cursor: pointer;
             transition: all 0.3s ease-in-out;
             &:active {
-                transform: scale(0.98);
+                transform: scale(0.9);
             }
         }
     }
-    & .input-color {
+    & .input-color-container {
         display: grid;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
         width: 100%;
         align-items: center;
         justify-items: center;
-        & .output-color {
+        & .color-input {
             width: 100px;
             height: 100px;
             & article {
                 background-color: ${({ color }) => color};
+                animation: fadeIn 2s ease;
             }
         }
     }

@@ -74,3 +74,17 @@ export function randomHexColor() {
     return color
 }
 const randomColor = () => '#' + ((Math.random() * (1 << 24)) | 0).toString(16)
+
+// check if color is valid
+export function isValidColor(color) {
+    let isValid = false
+    if (color.length === 7 || color.length === 4) {
+        if (color.charAt(0) === '#') {
+            isValid = true
+        }
+    } else if (color.length === 6 || color.length === 3) {
+        color = `#${color}`
+        isValid = true
+    }
+    return isValid
+}

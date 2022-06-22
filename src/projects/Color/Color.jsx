@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ColorStyled, SingleColorStyled } from './Color.styled'
+import { ColorStyled } from './Color.styled'
 import { randomHexColor } from '../../utils/Colors'
 import SingleColor from './SingleColor'
 import { useEffect } from 'react'
@@ -22,29 +22,31 @@ function Color() {
 
         if (
             (color.length === 7 || color.length === 4) &&
-            color.startsWith('#')
+            color.charAt(0) === '#'
         ) {
             setError(false)
         } else if (
-            color.length[0] !== '#' &&
-            (color.length === 3 || color.length === 6)
+            (color.length === 6 || color.length === 3) &&
+            color.charAt(0) !== '#'
         ) {
             setError(false)
-
-            console.log(color)
+            let val = color
+            if (val.charAt(0) !== '#') {
+                val = '#' + val
+            }
+            setColor(val)
         } else {
             setError(true)
-            return
         }
     }
-    const handleChange = (e) => {
+
+    const handleInputChange = (e) => {
         setColor(e.target.value)
-        console.log(color)
     }
 
     return (
         <ColorStyled>
-            <div className='input-color'>
+            <div className='input-color-container'>
                 <header>
                     <h1>Palette Color Generator</h1>
                 </header>
@@ -56,14 +58,14 @@ function Color() {
                             name='color-hex'
                             id='color-hex'
                             value={color}
-                            onChange={(e) => handleChange(e)}
+                            onChange={(e) => handleInputChange(e)}
                             placeholder='#A5FF6D'
                             className={`${error ? 'error' : null}`}
                         />
                         <button type='submit'>Submit</button>
                     </form>
                 </section>
-                <section className='output-color'>
+                <section className='color-input'>
                     <SingleColor color={color} />
                 </section>
             </div>
