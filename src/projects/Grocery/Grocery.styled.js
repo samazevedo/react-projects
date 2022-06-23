@@ -5,8 +5,8 @@ export const GroceryStyled = styled.main`
     grid-template-columns: 1fr;
     align-items: center;
     justify-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
         sans-serif;
     & h1 {
