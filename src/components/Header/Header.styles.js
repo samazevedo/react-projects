@@ -4,7 +4,7 @@ export const HeaderStyled = styled.header`
     max-width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr;
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors.black};
     & a {
