@@ -17,12 +17,13 @@ export const GroceryStyled = styled.main`
     }
     & .container {
         display: grid;
-        margin: 10% 0;
+        margin: 20% auto;
+        padding: 5%;
         grid-template-columns: 1fr;
         grid-template-rows: 0.5fr 0.1fr 1fr 0.5fr;
         align-items: center;
         justify-items: center;
-        width: 70vw;
+        width: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         & form {
             display: grid;
