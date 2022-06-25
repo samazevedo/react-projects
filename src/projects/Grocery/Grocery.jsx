@@ -8,12 +8,17 @@ function Grocery() {
     const [item, setItem] = useState('')
     const [edit, setEdit] = useState(false)
     const [editID, setEditID] = useState(null)
-    const [alert, setAlert] = useState({ show: false, message: '', type: '' })
+    const [alert, setAlert] = useState({
+        show: false,
+        message: '',
+        type: 'danger',
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (!item) {
+        if (!item || item.length === '') {
             //display alert
+            showAlert(true, 'danger', 'Please enter a valid item')
         } else if (item && edit) {
         } else {
             const newItem = {
@@ -23,6 +28,9 @@ function Grocery() {
             setList([...list, newItem])
             setItem('')
         }
+    }
+    const showAlert = (show = false, type = '', message = '') => {
+        setAlert({ show, type, message })
     }
     const handleDelete = (e) => {
         e.preventDefault()
@@ -43,7 +51,7 @@ function Grocery() {
     }
     return (
         <GroceryStyled>
-            {alert.show && <Alert>{alert.message} </Alert>}
+            {alert.show && <Alert {...alert} showAlert={showAlert} />}
             <section className='container'>
                 <h1>Grocery List</h1>
                 <form onSubmit={handleSubmit}>

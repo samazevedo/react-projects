@@ -99,6 +99,19 @@ export const GroceryList = styled.ul`
 `
 export const AlertStyled = styled.div`
     position: absolute;
-    top: 10%;
-    left: 50%;
+    top: 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    & .alert {
+        font-size: ${({ theme }) => theme.fontSizes.small};
+        text-align: center;
+        width: 300px;
+        &.danger {
+            color: ${({ theme }) => theme.colors.red};
+            background-color: ${({ theme }) => theme.colors.lightred};
+        }
+        &.success {
+            color: ${({ theme }) => theme.colors.green};
+        }
+    }
 `

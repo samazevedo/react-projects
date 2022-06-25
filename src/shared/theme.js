@@ -16,6 +16,7 @@ export const theme = {
         darkyellow: '#E6C329',
         turquise: '#7AEEDB',
         orange: '#FF8E25',
+        lightred: '#FFE0E0',
         red: '#FF5252',
         pink: '#FF4081',
         purple: '#9C27B0',
