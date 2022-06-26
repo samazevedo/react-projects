@@ -1,12 +1,13 @@
 import { AlertStyled } from './Grocery.styled'
 import { useEffect } from 'react'
 
-function Alert({ message, type, showAlert }) {
+function Alert({ message, type, showAlert, list }) {
     useEffect(() => {
-        setTimeout(() => {
-            showAlert(false)
+        const timeout = setTimeout(() => {
+            showAlert()
         }, 3000)
-    }, [showAlert])
+        return () => clearTimeout(timeout)
+    }, [list, showAlert])
 
     return (
         <AlertStyled>

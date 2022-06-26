@@ -16,42 +16,61 @@ function Grocery() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (!item || item.length === '') {
-            //display alert
-            showAlert(true, 'danger', 'Please enter a valid item')
+
+        if (!item || item.length < 3) {
+            showAlert(true, 'danger', 'Please enter an item')
         } else if (item && edit) {
+            setList(
+                list.map((item) => {
+                    if (item.id === editID) {
+                        return {
+                            ...item,
+                            title: item,
+                        }
+                    }
+                    return item
+                })
+            )
+
+            setItem('')
+            setEditID(null)
+            setEdit(false)
+            showAlert(true, 'success', 'Item updated')
         } else {
+            showAlert(true, 'success', 'Item added')
             const newItem = {
                 id: new Date().getTime().toString(),
                 title: item,
             }
+
             setList([...list, newItem])
             setItem('')
         }
     }
+
     const showAlert = (show = false, type = '', message = '') => {
         setAlert({ show, type, message })
     }
-    const handleDelete = (e) => {
-        e.preventDefault()
-        const index = e.target.id
-        const newGroceryList = [...list]
-        newGroceryList.splice(index, 1)
-        setList(newGroceryList)
+    const handleDelete = (id) => {
+        showAlert(true, 'danger', 'Item deleted')
+        setList(list.filter((item) => item.id !== id))
     }
-    const handleEdit = (e) => {
-        e.preventDefault()
-        const index = e.target.id
-        const newGroceryList = [...list]
-        newGroceryList[index] = e.target.value
-        setList(newGroceryList)
+    const handleEdit = (id) => {
+        const specificItem = list.find((item) => item.id === id)
+        setEdit(true)
+        setEditID(id)
+        setItem(specificItem.title)
     }
     const clearList = () => {
+        showAlert(true, 'danger', 'List cleared')
         setList([])
     }
+
     return (
         <GroceryStyled>
-            {alert.show && <Alert {...alert} showAlert={showAlert} />}
+            {alert.show && (
+                <Alert {...alert} showAlert={showAlert} list={list} />
+            )}
             <section className='container'>
                 <h1>Grocery List</h1>
                 <form onSubmit={handleSubmit}>
@@ -73,15 +92,12 @@ function Grocery() {
                                     <span>{title}</span>
                                     <FaTrashAlt
                                         id={id}
-                                        onClick={handleDelete}
+                                        onClick={() => handleDelete(id)}
                                         className='icon trash'
                                     />
                                     <FaEdit
                                         id={id}
-                                        onClick={() => {
-                                            setEdit(true)
-                                            setEditID(id)
-                                        }}
+                                        onClick={() => handleEdit(id)}
                                         className='icon edit'
                                     />
                                 </li>

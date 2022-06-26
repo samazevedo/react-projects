@@ -111,7 +111,8 @@ export const AlertStyled = styled.div`
             background-color: ${({ theme }) => theme.colors.lightred};
         }
         &.success {
-            color: ${({ theme }) => theme.colors.green};
+            color: ${({ theme }) => theme.colors.darkgreen};
+            background-color: ${({ theme }) => theme.colors.lightgreen};
         }
     }
 `
