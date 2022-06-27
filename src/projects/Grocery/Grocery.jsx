@@ -2,9 +2,19 @@ import { GroceryStyled, GroceryList } from './Grocery.styled'
 import { useState } from 'react'
 import { FaTrashAlt, FaEdit } from 'react-icons/fa'
 import Alert from './Alert'
+import { useEffect } from 'react'
+
+const getLocalStorage = () => {
+    let list = localStorage.getItem('list')
+    if (list) {
+        return JSON.parse(localStorage.getItem('list'))
+    } else {
+        return []
+    }
+}
 
 function Grocery() {
-    const [list, setList] = useState([])
+    const [list, setList] = useState(getLocalStorage())
     const [item, setItem] = useState('')
     const [edit, setEdit] = useState(false)
     const [editID, setEditID] = useState(null)
@@ -25,13 +35,12 @@ function Grocery() {
                     if (item.id === editID) {
                         return {
                             ...item,
-                            title: item,
+                            name: item.name.trim(),
                         }
                     }
                     return item
                 })
             )
-
             setItem('')
             setEditID(null)
             setEdit(false)
@@ -65,6 +74,9 @@ function Grocery() {
         showAlert(true, 'danger', 'List cleared')
         setList([])
     }
+    useEffect(() => {
+        localStorage.setItem('list', JSON.stringify(list))
+    }, [list])
 
     return (
         <GroceryStyled>
