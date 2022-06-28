@@ -38,10 +38,12 @@ export const NavbarStyled = styled.nav`
                 font-size: 1.5rem;
             }
         }
+
         & .links-container {
             display: grid;
             grid-template-columns: 1fr;
             width: 100%;
+
             & .links {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
