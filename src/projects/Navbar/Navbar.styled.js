@@ -9,6 +9,9 @@ export const NavbarStyled = styled.nav`
     display: grid;
     grid-template-rows: 1fr 1fr;
     z-index: 10;
+    a {
+        color: ${(props) => props.theme.colors.yellow};
+    }
     & .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -43,6 +46,11 @@ export const NavbarStyled = styled.nav`
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
                 width: 100%;
+                & li {
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 1fr;
+                }
             }
         }
     }
@@ -75,6 +83,15 @@ export const NavbarStyled = styled.nav`
             & ul {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                width: 100%;
+                justify-items: end;
+                & li:last-child {
+                    margin-right: 1rem;
+                }
+                & .social-item {
+                    color: ${({ theme }) => theme.colors.yellow};
+                    cursor: pointer;
+                }
             }
         }
     }

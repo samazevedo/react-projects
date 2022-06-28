@@ -15,34 +15,25 @@ function Navbar() {
             </div>
             <div className='links-container'>
                 <ul className='links'>
-                    <li>
-                        <a href='/'>home</a>
-                    </li>
-                    <li>
-                        <a href='/'>about</a>
-                    </li>
-                    <li>
-                        <a href='/'>contact</a>
-                    </li>
-                    <li>
-                        <a href='/'>products</a>
-                    </li>
+                    {links.map((link) => (
+                        <li key={link.id}>
+                            <a href={link.url}>{link.text}</a>
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className='social-icons'>
                 <ul>
-                    <li>
-                        <a href={social.facebook}>a</a>
-                    </li>
-                    <li>
-                        <a href={social.facebook}>b</a>
-                    </li>
-                    <li>
-                        <a href={social.facebook}>c</a>
-                    </li>
-                    <li>
-                        <a href={social.facebook}>d</a>
-                    </li>
+                    {social.map((item) => {
+                        const { id, url, icon } = item
+                        return (
+                            <li key={id} className='social-item'>
+                                <a href={url}>
+                                    <i> {icon}</i>
+                                </a>
+                            </li>
+                        )
+                    })}
                 </ul>
             </div>
         </NavbarStyled>
