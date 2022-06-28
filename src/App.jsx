@@ -18,6 +18,7 @@ import Slider from './projects/Slider/Slider'
 import Lorem from './projects/Lorem/Lorem'
 import Color from './projects/Color/Color'
 import Grocery from './projects/Grocery/Grocery'
+import Navbar from './projects/Navbar/Navbar'
 
 function App() {
     return (
@@ -57,6 +58,10 @@ function App() {
                             <Route
                                 path='projects/grocery'
                                 element={<Grocery />}
+                            />
+                            <Route
+                                path='projects/navbar'
+                                element={<Navbar />}
                             />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>

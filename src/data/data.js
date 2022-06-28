@@ -75,4 +75,11 @@ export const PROJECTSDATA = [
         url: 'grocery',
         image: '/assets/images/projects/grocery.png',
     },
+    {
+        id: 'navbar',
+        name: 'Navbar',
+        description: 'a Navegation Bar with a responsive menu',
+        url: 'navbar',
+        image: '/assets/images/projects/navbar.png',
+    },
 ]
