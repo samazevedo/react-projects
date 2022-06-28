@@ -10,7 +10,7 @@ function Navbar() {
                     <span>Coding</span>
                 </div>
                 <button className='toggle'>
-                    <FaBars />
+                    <FaBars className='icon' />
                 </button>
             </div>
             <div className='links-container'>
@@ -32,24 +32,16 @@ function Navbar() {
             <div className='social-icons'>
                 <ul>
                     <li>
-                        <a href={social.facebook}>
-                            <FaFacebookF />
-                        </a>
+                        <a href={social.facebook}>a</a>
                     </li>
                     <li>
-                        <a href={social.facebook}>
-                            <FaFacebookF />
-                        </a>
+                        <a href={social.facebook}>b</a>
                     </li>
                     <li>
-                        <a href={social.facebook}>
-                            <FaFacebookF />
-                        </a>
+                        <a href={social.facebook}>c</a>
                     </li>
                     <li>
-                        <a href={social.facebook}>
-                            <FaFacebookF />
-                        </a>
+                        <a href={social.facebook}>d</a>
                     </li>
                 </ul>
             </div>
