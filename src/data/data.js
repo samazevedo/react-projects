@@ -82,4 +82,11 @@ export const PROJECTSDATA = [
         url: 'navbar',
         image: '/assets/images/projects/navbar.png',
     },
+    {
+        id: 'sidebar',
+        name: 'Sidebar Modal',
+        description: 'A Sidebar with a modal',
+        url: 'sidebar',
+        image: '/assets/images/projects/sidebar.png',
+    },
 ]

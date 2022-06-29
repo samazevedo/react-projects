@@ -19,6 +19,7 @@ import Lorem from './projects/Lorem/Lorem'
 import Color from './projects/Color/Color'
 import Grocery from './projects/Grocery/Grocery'
 import Navbar from './projects/Navbar/Navbar'
+import Sidebar from './projects/Sidebar/Sidebar'
 
 function App() {
     return (
@@ -62,6 +63,10 @@ function App() {
                             <Route
                                 path='projects/navbar'
                                 element={<Navbar />}
+                            />
+                            <Route
+                                path='projects/sidebar'
+                                element={<Sidebar />}
                             />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
