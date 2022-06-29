@@ -16,17 +16,19 @@ function Navbar() {
                     <FaBars className='icon' />
                 </button>
             </div>
-            {isOpen && (
-                <div className='links-container'>
-                    <ul className='links'>
-                        {links.map((link) => (
-                            <li key={link.id}>
-                                <a href={link.url}>{link.text}</a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            <div
+                className={`${
+                    isOpen ? 'links-container open' : 'links-container'
+                }`}
+            >
+                <ul className='links'>
+                    {links.map((link) => (
+                        <li key={link.id}>
+                            <a href={link.url}>{link.text}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
             <div className='social-icons'>
                 <ul>
                     {social.map((item) => {

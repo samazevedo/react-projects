@@ -12,6 +12,32 @@ export const NavbarStyled = styled.nav`
     a {
         color: ${(props) => props.theme.colors.yellow};
     }
+
+    & .links-container {
+        height: 0;
+        overflow: hidden;
+        animation: smooth-toggle-close 1s ease-in-out;
+    }
+    @keyframes smooth-toggle-open {
+        0% {
+            height: 0;
+        }
+        100% {
+            height: 100%;
+        }
+    }
+    @keyframes smooth-toggle-close {
+        0% {
+            height: 100%;
+        }
+        100% {
+            height: 0;
+        }
+    }
+    & .links-container.open {
+        height: auto;
+        animation: smooth-toggle-open 1s ease-in-out;
+    }
     & .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -36,23 +62,6 @@ export const NavbarStyled = styled.nav`
             justify-items: flex-end;
             & .icon {
                 font-size: 1.5rem;
-            }
-        }
-
-        & .links-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            width: 100%;
-
-            & .links {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-                width: 100%;
-                & li {
-                    display: grid;
-                    width: 100%;
-                    grid-template-columns: 1fr;
-                }
             }
         }
     }
