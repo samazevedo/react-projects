@@ -7,37 +7,22 @@ export const NavbarStyled = styled.nav`
     width: 100%;
     background-color: ${(props) => props.theme.colors.gray};
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    z-index: 10;
+    grid-template-rows: repeat(2, 1fr);
+    z-index: 1;
     a {
         color: ${(props) => props.theme.colors.yellow};
     }
-
     & .links-container {
+        display: grid;
+        width: 100%;
         height: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
         overflow: hidden;
-        animation: smooth-toggle-close 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        height: 0px;
     }
-    @keyframes smooth-toggle-open {
-        0% {
-            height: 0;
-        }
-        100% {
-            height: 100%;
-        }
-    }
-    @keyframes smooth-toggle-close {
-        0% {
-            height: 100%;
-        }
-        100% {
-            height: 0;
-        }
-    }
-    & .links-container.open {
-        height: auto;
-        animation: smooth-toggle-open 1s ease-in-out;
-    }
+
     & .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -78,9 +63,7 @@ export const NavbarStyled = styled.nav`
             }
         }
         & .links-container {
-            margin-top: 1rem;
-            display: grid;
-            grid-template-rows: 1fr;
+            height: auto !important;
         }
         & .links {
             display: grid;
@@ -90,7 +73,6 @@ export const NavbarStyled = styled.nav`
         & .social-icons {
             display: grid;
             margin-top: 1rem;
-
             & ul {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
