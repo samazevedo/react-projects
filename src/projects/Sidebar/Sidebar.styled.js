@@ -16,14 +16,14 @@ export const HomeStyled = styled.main`
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
     align-items: center;
-
     & .show-modal-btn {
         border: none;
         background-color: ${({ theme }) => theme.colors.violet};
         color: ${({ theme }) => theme.colors.white};
-        font-size: ${({ theme }) => theme.fontSizes.small};
+        font-size: ${({ theme }) => theme.fontSizes.xsmall};
+        text-transform: uppercase;
         padding: 0.5rem;
         border-radius: 0.2rem;
         cursor: pointer;
@@ -52,6 +52,7 @@ export const HomeStyled = styled.main`
             font-size: ${({ theme }) => theme.fontSizes.xlarge};
             color: ${({ theme }) => theme.colors.black};
             background-color: transparent;
+            cursor: pointer;
             animation: infinite scaleGrow 1s linear;
             @keyframes scaleGrow {
                 0% {
@@ -68,18 +69,49 @@ export const HomeStyled = styled.main`
     }
 `
 export const ModalStyled = styled.div`
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-    &.show-modal {
+    visibility: hidden;
+    & .show-modal {
         display: flex;
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    & .modal-container {
+        background-color: ${({ theme }) => theme.colors.white};
+        border-radius: 0.2rem;
+        padding: 1rem;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        position: relative;
+        & .close-modal {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            color: ${({ theme }) => theme.colors.red};
+            background-color: transparent;
+            font-size: ${({ theme }) => theme.fontSizes.small};
+            text-transform: uppercase;
+            padding: 0.2rem;
+            cursor: pointer;
+            &:active {
+                transform: scale(0.9);
+            }
+            & :focus {
+                outline: none;
+            }
+        }
     }
 `
