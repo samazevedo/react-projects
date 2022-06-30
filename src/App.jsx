@@ -20,6 +20,7 @@ import Color from './projects/Color/Color'
 import Grocery from './projects/Grocery/Grocery'
 import Navbar from './projects/Navbar/Navbar'
 import Sidebar from './projects/Sidebar/Sidebar'
+import Stripe from './projects/Stripe/Stripe'
 
 function App() {
     return (
@@ -67,6 +68,10 @@ function App() {
                             <Route
                                 path='projects/sidebar'
                                 element={<Sidebar />}
+                            />
+                            <Route
+                                path='projects/stripe'
+                                element={<Stripe />}
                             />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>

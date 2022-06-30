@@ -89,4 +89,11 @@ export const PROJECTSDATA = [
         url: 'sidebar',
         image: '/assets/images/projects/sidebar.png',
     },
+    {
+        id: 'stripe',
+        name: 'Stripe',
+        description: 'A Stripe menu style',
+        url: 'stripe',
+        image: '/assests/images/projects/stripe.png',
+    },
 ]
