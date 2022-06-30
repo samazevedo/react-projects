@@ -4,7 +4,7 @@ import { links, social } from './sidebarDATA'
 
 function SidebarComp() {
     return (
-        <AsideStyled>
+        <AsideStyled className=''>
             <header>
                 <div className='logo'>
                     <span>S Coders</span>

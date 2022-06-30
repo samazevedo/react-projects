@@ -117,6 +117,10 @@ export const ModalStyled = styled.div`
 `
 
 export const AsideStyled = styled.aside`
+    visibility: hidden;
+    &.show-sidebar {
+        visibility: visible;
+    }
     position: absolute;
     top: 0;
     left: 0;
