@@ -1,15 +1,17 @@
 import { FaTimes } from 'react-icons/fa'
 import { AsideStyled } from './Sidebar.styled'
 import { links, social } from './sidebarDATA'
+import { useGlobalContext } from './context'
 
 function SidebarComp() {
+    const { closeSidebar, sidebarOpen } = useGlobalContext()
     return (
-        <AsideStyled className=''>
+        <AsideStyled className={`${sidebarOpen ? 'show-aside' : null}`}>
             <header>
                 <div className='logo'>
                     <span>S Coders</span>
                 </div>
-                <button className='close-btn'>
+                <button className='close-btn' onClick={() => closeSidebar()}>
                     <FaTimes />
                 </button>
             </header>
