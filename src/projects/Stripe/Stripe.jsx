@@ -9,8 +9,8 @@ function Stripe() {
         <AppProvider>
             <StripeStyled>
                 <Navbar />
-                <Sidebar />
                 <Hero />
+                <Sidebar />
                 <Submenu />
             </StripeStyled>
         </AppProvider>
