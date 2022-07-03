@@ -7,23 +7,26 @@ const Navbar = () => {
 
     return (
         <NavbarStyled>
-            <div className='nav-center'>
-                <div className='nav-header'>
-                    <div className='logo'>
-                        <span>Stripe</span>
-                    </div>
-                    <button className='btn toggle-btn' onClick={openSidebar}>
-                        <FaBars />
-                    </button>
+            <header className='nav-header'>
+                <div className='logo'>
+                    <span>Stripe</span>
                 </div>
-                <ul>
+                <button className='toggle-btn btn' onClick={openSidebar}>
+                    <FaBars />
+                </button>
+                <ul className='links-list'>
                     <li>
                         <button className='link-btn'>ONe</button>
+                    </li>
+                    <li>
                         <button className='link-btn'>two</button>
+                    </li>
+                    <li>
                         <button className='link-btn'>three</button>
                     </li>
                 </ul>
-            </div>
+                <button className='sign-in-btn btn'>Sign in</button>
+            </header>
         </NavbarStyled>
     )
 }
