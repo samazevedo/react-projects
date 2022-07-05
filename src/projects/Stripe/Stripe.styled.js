@@ -32,11 +32,6 @@ export const StripeStyled = styled.main`
             transform: scale(0.99);
         }
     }
-    @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        & aside {
-            display: none;
-        }
-    }
 `
 
 export const NavbarStyled = styled.nav`
@@ -165,7 +160,17 @@ export const SidebarStyled = styled.aside`
     position: fixed;
     top: 0;
     left: 0;
-    display: grid;
+    display: none;
+    animation: shrink 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    @keyframes shrink {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
     position: fixed;
     top: 0;
     left: 0;
@@ -176,6 +181,7 @@ export const SidebarStyled = styled.aside`
     grid-template-rows: 1fr;
     &.show {
         display: grid;
+        visibility: visible;
         animation: grow 0.5s ease-in;
         animation-fill-mode: forwards;
         @keyframes grow {
@@ -215,6 +221,11 @@ export const SidebarStyled = styled.aside`
             background-color: transparent;
             border: none;
             cursor: pointer;
+        }
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        &.show {
+            display: none;
         }
     }
 `
