@@ -66,9 +66,17 @@ export const NavbarStyled = styled.nav`
     }
     & .link-btn {
         background-color: transparent;
+        padding: 0.3rem 0.5rem;
         border: none;
-        color: blue;
-        font-size: ${({ theme }) => theme.fontSizes.small};
+        color: #fff;
+        font-size: 1rem;
+        text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
+        font-size: ${({ theme }) => theme.fontSizes.medium};
+        cursor: pointer;
+        &:hover {
+            transition: all 0.3s ease-in-out;
+            color: ${({ theme }) => theme.colors.lightyellow};
+        }
     }
 
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -227,5 +235,19 @@ export const SidebarStyled = styled.aside`
         &.show {
             display: none;
         }
+    }
+`
+export const SubmenuStyled = styled.aside`
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+    &.show {
+        display: grid;
     }
 `
