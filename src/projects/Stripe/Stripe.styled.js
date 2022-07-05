@@ -32,6 +32,11 @@ export const StripeStyled = styled.main`
             transform: scale(0.99);
         }
     }
+    @media screen and (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        & aside {
+            display: none;
+        }
+    }
 `
 
 export const NavbarStyled = styled.nav`
@@ -113,7 +118,6 @@ export const HeroStyled = styled.section`
             #dff5a5 50%,
             #8f54c6 100%
         );
-        overflow: visible;
         clip-path: polygon(0 1%, 100% 1%, 100% 30%, 0 55%);
     }
     & .hero-content {
@@ -153,6 +157,64 @@ export const HeroStyled = styled.section`
         }
         & .hero-content {
             grid-template-columns: 1fr;
+        }
+    }
+`
+export const SidebarStyled = styled.aside`
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    &.show {
+        display: grid;
+        animation: grow 0.5s ease-in;
+        animation-fill-mode: forwards;
+        @keyframes grow {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    }
+    &.close {
+        animation: shrink 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+        @keyframes shrink {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    }
+    & .sidebar {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.1fr 1fr;
+        align-items: center;
+        background-color: #fff;
+        padding: 0.5rem;
+        margin: 1.5rem;
+        border-radius: 0.3rem;
+
+        & .close-btn {
+            justify-self: end;
+            font-size: ${({ theme }) => theme.fontSizes.xlarge};
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
         }
     }
 `
