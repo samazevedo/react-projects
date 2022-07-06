@@ -26,14 +26,14 @@ export const NavbarStyled = styled.nav`
     width: 100%;
     padding: 0.4rem;
     & .logo {
-        font-size: ${({ theme }) => theme.fontSizes.xlarge};
+        font-size: ${({ theme }) => theme.fontSizes.large};
         justify-self: center;
         color: ${({ theme }) => theme.colors.white};
         font-weight: bold;
     }
     & .check-out {
         position: relative;
-        font-size: ${({ theme }) => theme.fontSizes.xxlarge};
+        font-size: ${({ theme }) => theme.fontSizes.xlarge};
         color: ${({ theme }) => theme.colors.white};
         justify-self: end;
         margin-right: 7rem;
@@ -57,11 +57,18 @@ export const BagStyled = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 0.1rem;
     grid-template-rows: auto;
     align-items: center;
     justify-items: center;
-    margin: 0 20rem;
+    margin: 0 5rem;
+    transition: all 0.3s ease-in-out;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        margin: 0 10rem;
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.laptop}) {
+        margin: 0 20rem;
+    }
     & .horizontal-line {
         justify-self: center;
         width: 90%;
@@ -103,11 +110,28 @@ export const BagStyled = styled.section`
             padding: 0.5rem;
             margin: 0.5rem;
             letter-spacing: 0.3rem;
-            box-shadow: 0 0.2rem 0.2rem ${({ theme }) => theme.colors.red};
+            box-shadow: 0 0.1rem 0.1rem ${({ theme }) => theme.colors.red};
             &:hover {
                 color: ${({ theme }) => theme.colors.red};
             }
+            &:focus {
+                outline: none;
+            }
+            &:active {
+                transform: scale(0.98);
+            }
         }
+    }
+    & .empy-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        padding: 5rem 1rem;
+        color: ${({ theme }) => theme.colors.gray};
+        font-size: ${({ theme }) => theme.fontSizes.xsmall};
+        font-weight: 100;
     }
 `
 export const BagItemStyled = styled.article`
@@ -125,8 +149,8 @@ export const BagItemStyled = styled.article`
         border: none;
         img {
             width: 100%;
-            max-width: 5rem;
-            height: 5rem;
+            max-width: 4rem;
+            height: 4rem;
             object-fit: fill;
         }
     }
@@ -140,23 +164,23 @@ export const BagItemStyled = styled.article`
         margin-left: 0;
         & h3 {
             margin: 0;
-            font-size: ${({ theme }) => theme.fontSizes.small};
+            font-size: ${({ theme }) => theme.fontSizes.xsmall};
             font-weight: 300;
         }
         & p {
             margin: 0;
-            font-size: ${({ theme }) => theme.fontSizes.small};
+            font-size: ${({ theme }) => theme.fontSizes.xsmall};
             font-weight: 100;
             color: ${({ theme }) => theme.colors.gray};
         }
         & button {
-            font-size: ${({ theme }) => theme.fontSizes.small};
+            font-size: ${({ theme }) => theme.fontSizes.xsmall};
             font-weight: 300;
             background-color: transparent;
             color: ${({ theme }) => theme.colors.blue};
             border: none;
             padding: 0;
-            margin: 0.7rem 0 0rem 0rem;
+            margin: 0.4rem 0 0rem 0rem;
             cursor: pointer;
             &:hover {
                 color: ${({ theme }) => theme.colors.red};
