@@ -180,7 +180,7 @@ export const HeroStyled = styled.section`
     }
 `
 export const SidebarStyled = styled.aside`
-    z-index: 3;
+    z-index: 5;
     position: fixed;
     top: 0;
     left: 0;
@@ -232,8 +232,8 @@ export const SidebarStyled = styled.aside`
     & .sidebar {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 0.1fr 1fr;
-        align-items: center;
+        grid-template-rows: 0.1fr 1.9fr;
+        align-items: flex-start;
         background-color: #fff;
         padding: 0.5rem;
         margin: 1.5rem;
@@ -246,6 +246,41 @@ export const SidebarStyled = styled.aside`
             border: none;
             cursor: pointer;
         }
+        & h3 {
+            font-size: ${({ theme }) => theme.fontSizes.medium};
+            color: #fff;
+            text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.9);
+        }
+        & ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(fit-content, 1fr);
+            align-items: center;
+            justify-items: flex-start;
+            & a {
+                display: grid;
+                grid-template-columns: 0.5fr 1fr;
+                grid-template-rows: 1fr;
+                align-items: center;
+                justify-items: flex-start;
+                color: #000;
+                text-transform: capitalize;
+                font-weight: 900;
+                &:hover {
+                    transition: all 0.3s ease-in-out;
+                    color: #eaff4b;
+                }
+                & svg {
+                    color: #eaff4b;
+                    background-color: #000;
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: 2rem;
+                    padding: 0.3rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         &.show {
@@ -254,19 +289,19 @@ export const SidebarStyled = styled.aside`
     }
 `
 export const SubmenuStyled = styled.aside`
-    z-index: 3;
+    z-index: 5;
     display: none;
     position: absolute;
     background-color: transparent;
-    border-radius: 0.4rem;
+    border-radius: 0.3rem;
     border: none;
-    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5), 0 0 0.2rem rgba(0, 0, 0, 0.5);
-    padding: 2rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3), 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    padding: 1rem;
     background-color: #fff;
     border-radius: 0.4rem;
-    clip-path: polygon(50% 0, 55% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 45% 5%);
     &.show {
         display: grid;
+        margin: 0;
     }
     & .submenu-center {
         display: grid;
@@ -274,13 +309,16 @@ export const SubmenuStyled = styled.aside`
         justify-items: flex-start;
         & a {
             display: grid;
-            grid-template-columns: 0.5fr 1fr;
+            grid-template-columns: 0.5fr 1.5fr;
             align-items: center;
-            justify-items: flex-start;
             margin-right: 1rem;
-            color: ${({ theme }) => theme.colors.violet};
+            color: #000;
+            text-shadow: 0 0 0.1rem rgba(0, 0, 0, 0.3);
             font-size: ${({ theme }) => theme.fontSizes.small};
             text-transform: capitalize;
+            & svg {
+                color: #eaff4b;
+            }
         }
         & ul {
             display: grid;
@@ -306,5 +344,8 @@ export const SubmenuStyled = styled.aside`
     & h3 {
         font-size: ${({ theme }) => theme.fontSizes.medium};
         text-transform: capitalize;
+        color: #eaff4b;
+        text-shadow: 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
+        margin: 0;
     }
 `

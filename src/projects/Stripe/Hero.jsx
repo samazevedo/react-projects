@@ -5,7 +5,7 @@ function Hero() {
     const { closeSubmenu } = useGlobalContext()
 
     return (
-        <HeroStyled>
+        <HeroStyled onMouseOver={closeSubmenu}>
             <div className='hero-bg'></div>
             <div className='hero-content'>
                 <article>

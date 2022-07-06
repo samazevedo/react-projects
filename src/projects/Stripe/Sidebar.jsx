@@ -24,8 +24,8 @@ const Sidebar = () => {
                                         return (
                                             <li key={index}>
                                                 <a href={url}>
-                                                    <span>{label}</span>
                                                     <span>{icon}</span>
+                                                    <span>{label}</span>
                                                 </a>
                                             </li>
                                         )

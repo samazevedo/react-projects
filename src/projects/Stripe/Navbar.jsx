@@ -12,9 +12,15 @@ const Navbar = () => {
 
         openSubmenu(page, { center, bottom })
     }
+    const handleSubmenu = (e) => {
+        const { target } = e
+        if (target.classList.contains('submenu-center')) {
+            closeSubmenu()
+        }
+    }
 
     return (
-        <NavbarStyled>
+        <NavbarStyled onMouseOver={handleSubmenu}>
             <header className='nav-header'>
                 <div className='logo'>
                     <span>Stripe</span>
@@ -23,22 +29,13 @@ const Navbar = () => {
                     <FaBars />
                 </button>
                 <ul className='links-list'>
-                    <li
-                        onMouseOver={(e) => displaySubmenu(e)}
-                        onMouseLeave={(e) => closeSubmenu(e)}
-                    >
+                    <li onMouseOver={(e) => displaySubmenu(e)}>
                         <button className='link-btn'>products</button>
                     </li>
-                    <li
-                        onMouseOver={(e) => displaySubmenu(e)}
-                        onMouseLeave={(e) => closeSubmenu(e)}
-                    >
+                    <li onMouseOver={(e) => displaySubmenu(e)}>
                         <button className='link-btn'>developers</button>
                     </li>
-                    <li
-                        onMouseOver={(e) => displaySubmenu(e)}
-                        onMouseLeave={(e) => closeSubmenu(e)}
-                    >
+                    <li onMouseOver={(e) => displaySubmenu(e)}>
                         <button className='link-btn'>company</button>
                     </li>
                 </ul>
