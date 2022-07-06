@@ -35,6 +35,7 @@ export const StripeStyled = styled.main`
 `
 
 export const NavbarStyled = styled.nav`
+    z-index: 4;
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
@@ -102,16 +103,25 @@ export const NavbarStyled = styled.nav`
     }
 `
 export const HeroStyled = styled.section`
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     width: 100%;
     height: 100%;
+    margin: 0;
     & .hero-bg {
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         z-index: 1;
+        margin: 0;
+        padding: 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
         background-color: #85fffd;
@@ -243,10 +253,14 @@ export const SubmenuStyled = styled.aside`
     position: absolute;
     top: 0;
     left: 0;
+    background-color: transparent;
+    border-radius: 0.4rem;
+    border: none;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.5), 0 0 0.2rem rgba(0, 0, 0, 0.5);
+    padding: 2rem;
     background-color: #fff;
-    border-radius: 0.3rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
-
+    border-radius: 0.4rem;
+    clip-path: polygon(50% 0, 55% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 45% 5%);
     &.show {
         display: grid;
     }

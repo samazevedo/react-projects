@@ -17,7 +17,7 @@ const Submenu = () => {
             className={`${isSubmenuOpen ? ' submenu show ' : 'submenu'}`}
             ref={container}
         >
-            Submenu
+            submenu
         </SubmenuStyled>
     )
 }
