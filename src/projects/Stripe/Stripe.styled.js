@@ -11,6 +11,11 @@ export const StripeStyled = styled.main`
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     font-family: 'Roboto', sans-serif;
+    &.submenu {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+    }
     & .btn {
         border: none;
         border-radius: 0.3rem;
@@ -74,6 +79,7 @@ export const NavbarStyled = styled.nav`
         text-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
         font-size: ${({ theme }) => theme.fontSizes.medium};
         cursor: pointer;
+        text-transform: capitalize;
         &:hover {
             transition: all 0.3s ease-in-out;
             color: ${({ theme }) => theme.colors.lightyellow};
@@ -251,8 +257,6 @@ export const SubmenuStyled = styled.aside`
     z-index: 3;
     display: none;
     position: absolute;
-    top: 0;
-    left: 0;
     background-color: transparent;
     border-radius: 0.4rem;
     border: none;
@@ -263,5 +267,44 @@ export const SubmenuStyled = styled.aside`
     clip-path: polygon(50% 0, 55% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 45% 5%);
     &.show {
         display: grid;
+    }
+    & .submenu-center {
+        display: grid;
+        align-items: center;
+        justify-items: flex-start;
+        & a {
+            display: grid;
+            grid-template-columns: 0.5fr 1fr;
+            align-items: center;
+            justify-items: flex-start;
+            margin-right: 1rem;
+            color: ${({ theme }) => theme.colors.violet};
+            font-size: ${({ theme }) => theme.fontSizes.small};
+            text-transform: capitalize;
+        }
+        & ul {
+            display: grid;
+            align-items: center;
+            justify-items: flex-start;
+            &.col-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+            &.col-3 {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            &.col-4 {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+            & li {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: center;
+                justify-items: center;
+            }
+        }
+    }
+    & h3 {
+        font-size: ${({ theme }) => theme.fontSizes.medium};
+        text-transform: capitalize;
     }
 `

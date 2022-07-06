@@ -1,11 +1,12 @@
 import { useState, useContext, createContext } from 'react'
-
+import sublinks from './stripeDATA'
 const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
     const [location, setLocation] = useState({})
+    const [selectPage, setSelectPage] = useState({ page: '', links: [] })
 
     const openSidebar = () => {
         setIsSidebarOpen(true)
@@ -14,6 +15,9 @@ export const AppProvider = ({ children }) => {
         setIsSidebarOpen(false)
     }
     const openSubmenu = (text, coordinates) => {
+        const selectedPage = sublinks.find((item) => item.page === text)
+        console.log(selectedPage)
+        setSelectPage(selectedPage)
         setLocation(coordinates)
         setIsSubmenuOpen(true)
     }
@@ -30,6 +34,7 @@ export const AppProvider = ({ children }) => {
                 openSubmenu,
                 closeSubmenu,
                 location,
+                selectPage,
             }}
         >
             {children}

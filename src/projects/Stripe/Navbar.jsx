@@ -7,9 +7,9 @@ const Navbar = () => {
     const displaySubmenu = (e) => {
         const page = e.target.textContent
         const tempBtn = e.target.getBoundingClientRect()
-        console.log(tempBtn)
-        const center = (tempBtn.left + tempBtn.right) / 2 - 65
-        const bottom = tempBtn.bottom
+        const center = Math.round(tempBtn.left + tempBtn.right) / 2 - 200
+        const bottom = Math.round(tempBtn.bottom) - 3
+
         openSubmenu(page, { center, bottom })
     }
 
@@ -23,29 +23,23 @@ const Navbar = () => {
                     <FaBars />
                 </button>
                 <ul className='links-list'>
-                    <li>
-                        <button
-                            className='link-btn'
-                            onMouseOver={displaySubmenu}
-                        >
-                            ONe
-                        </button>
+                    <li
+                        onMouseOver={(e) => displaySubmenu(e)}
+                        onMouseLeave={(e) => closeSubmenu(e)}
+                    >
+                        <button className='link-btn'>products</button>
                     </li>
-                    <li>
-                        <button
-                            className='link-btn'
-                            onMouseOver={displaySubmenu}
-                        >
-                            two
-                        </button>
+                    <li
+                        onMouseOver={(e) => displaySubmenu(e)}
+                        onMouseLeave={(e) => closeSubmenu(e)}
+                    >
+                        <button className='link-btn'>developers</button>
                     </li>
-                    <li>
-                        <button
-                            className='link-btn'
-                            onMouseOver={displaySubmenu}
-                        >
-                            three
-                        </button>
+                    <li
+                        onMouseOver={(e) => displaySubmenu(e)}
+                        onMouseLeave={(e) => closeSubmenu(e)}
+                    >
+                        <button className='link-btn'>company</button>
                     </li>
                 </ul>
                 <button className='sign-in-btn btn'>Sign in</button>
