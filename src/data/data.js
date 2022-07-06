@@ -94,6 +94,13 @@ export const PROJECTSDATA = [
         name: 'Stripe',
         description: 'A Stripe menu style',
         url: 'stripe',
-        image: '/assests/images/projects/stripe.png',
+        image: '/assets/images/projects/stripe.png',
+    },
+    {
+        id: 'cart',
+        name: 'Cart',
+        description: 'A Cart app',
+        url: 'cart',
+        image: '/assets/images/projects/cart.png',
     },
 ]

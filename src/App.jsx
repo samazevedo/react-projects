@@ -21,6 +21,7 @@ import Grocery from './projects/Grocery/Grocery'
 import Navbar from './projects/Navbar/Navbar'
 import Sidebar from './projects/Sidebar/Sidebar'
 import Stripe from './projects/Stripe/Stripe'
+import Cart from './projects/Cart/Cart'
 
 function App() {
     return (
@@ -73,6 +74,7 @@ function App() {
                                 path='projects/stripe'
                                 element={<Stripe />}
                             />
+                            <Route path='projects/cart' element={<Cart />} />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
