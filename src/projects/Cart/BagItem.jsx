@@ -2,9 +2,8 @@ import { BagItemStyled } from './Cart.styled'
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa'
 import { useGlobalContext } from './context'
 
-export const BagItem = ({ image, title, price, id }) => {
-    const { handleChange, removeItem, AddItem, SubItem, count } =
-        useGlobalContext()
+export const BagItem = ({ image, title, price, id, amount }) => {
+    const { removeItem, increaseAmount, decreaseAmount } = useGlobalContext()
 
     return (
         <BagItemStyled>
@@ -14,21 +13,15 @@ export const BagItem = ({ image, title, price, id }) => {
             <div className='info'>
                 <h3>{title}</h3>
                 <p>{price}</p>
-                <button id={id} onClick={() => removeItem(id)}>
-                    remove
-                </button>
+                <button onClick={() => removeItem(id)}>remove</button>
             </div>
             <div className='actions'>
                 <button>
-                    <FaAngleUp id={id} onClick={(e) => AddItem(e)} />
+                    <FaAngleUp onClick={() => increaseAmount(id)} />
                 </button>
-                <input
-                    type='text'
-                    value={count}
-                    onChange={(e) => handleChange(e)}
-                />
+                <p className='amount'>{amount}</p>
                 <button>
-                    <FaAngleDown onClick={SubItem} />
+                    <FaAngleDown onClick={() => decreaseAmount(id)} />
                 </button>
             </div>
         </BagItemStyled>

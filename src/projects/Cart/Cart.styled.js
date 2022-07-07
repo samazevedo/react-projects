@@ -137,7 +137,7 @@ export const BagStyled = styled.section`
 export const BagItemStyled = styled.article`
     display: grid;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
     grid-template-rows: 1fr;
     align-items: center;
     & .image {
@@ -190,17 +190,15 @@ export const BagItemStyled = styled.article`
     & .actions {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        padding-right: 1rem;
+        grid-template-rows: 1fr 0.5fr 1fr;
         align-items: center;
-        justify-items: flex-end;
+        justify-items: center;
         & button {
             border: none;
             background-color: transparent;
             color: ${({ theme }) => theme.colors.darkblue};
-            font-size: ${({ theme }) => theme.fontSizes.medium};
+            font-size: ${({ theme }) => theme.fontSizes.small};
             font-weight: 900;
-            padding-right: 0.35rem;
             margin: 0;
             cursor: pointer;
             &:hover {
@@ -208,8 +206,7 @@ export const BagItemStyled = styled.article`
             }
         }
     }
-    & input {
-        width: 2rem;
-        text-align: center;
+    & .amount {
+        font-size: ${({ theme }) => theme.fontSizes.small};
     }
 `

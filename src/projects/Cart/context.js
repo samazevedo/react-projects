@@ -1,8 +1,8 @@
-import { useContext, createContext, useState, useReducer } from 'react'
+import { useContext, createContext, useReducer } from 'react'
 import data from './data'
-const AppContext = createContext()
 import reducer from './reducer'
 
+const AppContext = createContext()
 const initialState = {
     list: data,
     total: 0,
@@ -10,53 +10,29 @@ const initialState = {
 }
 
 export const AppProvider = ({ children }) => {
-    const [list, setList] = useState(data)
-    const [state, dispatch] = useReducer()
-    const [count, setCount] = useState(0)
-    const [total, setTotal] = useState(0)
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     const ClearList = () => {
-        setList([])
+        dispatch({ type: 'CLEAR_LIST' })
     }
     const removeItem = (id) => {
-        const newList = list.filter((item) => item.id !== id)
-        setList(newList)
-        console.log(id)
+        dispatch({ type: 'REMOVE_ITEM', payload: id })
     }
-    const AddItem = (e) => {
-        setCount(count + 1)
-        if (count >= 10) {
-            setCount(10)
-        }
+    const increaseAmount = (id) => {
+        dispatch({ type: 'INCREASE_AMOUNT', payload: id })
     }
-    const SubItem = () => {
-        setCount(count - 1)
-        if (count <= 0) {
-            setCount(0)
-        }
+    const decreaseAmount = (id) => {
+        dispatch({ type: 'DECREASE_AMOUNT', payload: id })
     }
-    const handleChange = (e) => {
-        console.log('hi')
-    }
-    const totalPrice = () => {
-        let total = 0
-        list.forEach((item) => {
-            total += Number(item.price * item.count)
-        })
-        setTotal(total)
-    }
+
     return (
         <AppContext.Provider
             value={{
-                list,
+                ...state,
                 ClearList,
-                AddItem,
-                SubItem,
-                count,
-                handleChange,
                 removeItem,
-                total,
-                totalPrice,
+                increaseAmount,
+                decreaseAmount,
             }}
         >
             {children}

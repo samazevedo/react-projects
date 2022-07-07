@@ -1,10 +1,9 @@
 import { BagStyled } from './Cart.styled'
 import { BagItem } from './BagItem'
 import { useGlobalContext } from './context'
-import { useEffect } from 'react'
 
 export const Bag = () => {
-    const { ClearList, list, total, totalPrice } = useGlobalContext()
+    const { ClearList, list, total } = useGlobalContext()
 
     if (list.length === 0) {
         return (
@@ -19,13 +18,14 @@ export const Bag = () => {
     return (
         <BagStyled>
             {list.map((item) => {
-                return <BagItem key={item.id} {...item} />
+                const { id } = item
+                return <BagItem key={id} {...item} />
             })}
             <div className='horizontal-line'></div>
             <div className='checkout'>
                 <div className='price-box'>
                     <p className='total'>Total</p>
-                    <p className='total-price'>{total}</p>
+                    <p className='total-price'>${total}</p>
                 </div>
                 <button onClick={ClearList}>Clear Cart</button>
             </div>
