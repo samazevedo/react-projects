@@ -1,9 +1,17 @@
-import { useContext, createContext, useState } from 'react'
+import { useContext, createContext, useState, useReducer } from 'react'
 import data from './data'
 const AppContext = createContext()
+import reducer from './reducer'
+
+const initialState = {
+    list: data,
+    total: 0,
+    amount: 0,
+}
 
 export const AppProvider = ({ children }) => {
     const [list, setList] = useState(data)
+    const [state, dispatch] = useReducer()
     const [count, setCount] = useState(0)
     const [total, setTotal] = useState(0)
 
