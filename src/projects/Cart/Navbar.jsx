@@ -6,7 +6,7 @@ export const Navbar = () => {
     const { amount } = useGlobalContext()
     return (
         <NavbarStyled>
-            <div className='logo'>useContext</div>
+            <div className='logo'>useReducer</div>
             <div className='check-out'>
                 <FaShoppingBag />
                 <span className='count'>{amount}</span>

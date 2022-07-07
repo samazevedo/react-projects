@@ -1,4 +1,4 @@
-import { useContext, createContext, useReducer } from 'react'
+import { useContext, createContext, useReducer, useEffect } from 'react'
 import data from './data'
 import reducer from './reducer'
 
@@ -24,6 +24,10 @@ export const AppProvider = ({ children }) => {
     const decreaseAmount = (id) => {
         dispatch({ type: 'DECREASE_AMOUNT', payload: id })
     }
+
+    useEffect(() => {
+        dispatch({ type: 'GET_TOTALS' })
+    }, [state.list])
 
     return (
         <AppContext.Provider
