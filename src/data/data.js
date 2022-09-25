@@ -1,3 +1,5 @@
+import { FaMarkdown } from 'react-icons/fa'
+
 export const PROJECTSDATA = [
     {
         id: 'reminder',
@@ -102,5 +104,12 @@ export const PROJECTSDATA = [
         description: 'A Cart app',
         url: 'cart',
         image: '/assets/images/projects/cart.png',
+    },
+    {
+        id: 'markdown',
+        name: 'Markdown',
+        description: 'Transform Markdown syntax into HTML',
+        url: 'markdown',
+        image: 'assets/images/projects/markdown.png',
     },
 ]

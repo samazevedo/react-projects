@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './shared/theme'
 import { GlobalStyle } from './shared/Global'
-import HomePage from './pages/Home/HomePage'
 import ErrorPage from './pages/404/404'
 import ProjectsPage from './pages/Projects/ProjectsPage'
 import { Container } from './components/styles/Container/Container.styled'
@@ -22,6 +21,7 @@ import Navbar from './projects/Navbar/Navbar'
 import Sidebar from './projects/Sidebar/Sidebar'
 import Stripe from './projects/Stripe/Stripe'
 import Cart from './projects/Cart/Cart'
+import { Markdown } from './projects/Markdown/Markdown'
 
 function App() {
     return (
@@ -32,8 +32,7 @@ function App() {
                     <GlobalStyle />
                     <Container>
                         <Routes>
-                            <Route index element={<HomePage />} />
-                            <Route path='home' element={<HomePage />} />
+                            <Route index element={<ProjectsPage />} />
                             <Route path='projects' element={<ProjectsPage />}>
                                 <Route path=':id' element={<ProjectsPage />} />
                             </Route>
@@ -75,6 +74,10 @@ function App() {
                                 element={<Stripe />}
                             />
                             <Route path='projects/cart' element={<Cart />} />
+                            <Route
+                                path='projects/markdown'
+                                element={<Markdown />}
+                            />
                             <Route path='*' element={<ErrorPage />} />
                         </Routes>
                     </Container>
